@@ -16,6 +16,7 @@ server.listen(3000, function () {
 //socket部分
 io.on('connection', function (socket) {
 	console.log("[%j] a client connection", new Date().toLocaleString());
+	console.log("socket.handshake.query: %j", socket.handshake.query);
 	//接收并处理客户端的hi事件
 	socket.on('hi', function (data) {
 		console.log(data);

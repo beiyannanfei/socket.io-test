@@ -15,7 +15,8 @@
 </body>
 <script type="text/javascript" src="./socket.io.js"></script>
 <script type="text/javascript">
-  var socket = io.connect('localhost:3000'),//与服务器进行连接
+  var baseUrl = 'localhost:3000?id=1001';
+  var socket = io.connect(baseUrl),//与服务器进行连接
           send = document.getElementById('sendBtn'),
           leave = document.getElementById('leaveBtn');
 
