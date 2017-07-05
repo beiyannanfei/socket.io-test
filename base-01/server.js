@@ -21,6 +21,7 @@ io.on('connection', function (socket) {
 	socket.on('hi', function (data) {
 		console.log(data);
 		//触发客户端事件c_hi
+		socket.uid = socket.handshake.query.id;   //存储数据
 		socket.emit('c_hi', 'hello too!');
 	});
 
@@ -29,7 +30,7 @@ io.on('connection', function (socket) {
 		console.log('断开', data);
 		socket.emit('c_leave', '离开');
 		//socket.broadcast用于向整个网络广播(除自己之外)
-		socket.broadcast.emit('c_leave', '某某人离开了')
+		socket.broadcast.emit('c_leave', `${socket.uid}离开了`)
 	});
 });
 
