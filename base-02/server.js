@@ -99,3 +99,4 @@ io.on('connection', function (socket) {
 	});
 });
 
+// 使用send和emit都可以发送数据，但是emit可以自定义事件, send形式发送的数据只能通过on(message)事件接收数据
