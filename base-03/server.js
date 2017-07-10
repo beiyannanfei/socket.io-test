@@ -62,5 +62,3 @@ app.get("/client", function (req, res) {
  5).强制使用WebSocket通信：（客户端）socket.send('hi')，（服务器）用socket.on('message', function(data){})来接收。
  Socket.IO的进阶用法介绍基本就到这里。个人感觉在日常使用的时候这些基本API已经够用了，这也体现了Socket.IO极其简洁易用的设计哲学。本文只是抛砖引玉，当在实际运用中遇到解决不了的问题时，再去查看官方详细的WIKI会比较好。
  */
-// 深圳市亿威尔信息技术股份有限公司
-// 91440300723021032L
