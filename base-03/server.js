@@ -54,6 +54,15 @@ app.get("/client", function (req, res) {
 	return res.send("OK--");
 });
 
+app.get("/multi", function (req, res) {   //向多个房间推送
+	let rooms = req.query.rs;
+	let rList = rooms.split(",");
+	rList.forEach(item => {
+		io.to(item);
+	});
+	io.emit("rmsg", "----------");
+});
+
 /*
  1).向所有客户端广播：socket.broadcast.emit('broadcast message');
  2).进入一个房间（非常好用！相当于一个命名空间，可以对一个特定的房间广播而不影响在其他房间或不在房间的客户端）：socket.join('your room name');
